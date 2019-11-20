@@ -7,9 +7,27 @@
     <title>Vue JS</title>
 </head>
 <body>
-
+    <h1>Vue JS</h1>
     <div id="title">
         <a v-bind:href="link" :title="title">{{ title }}</a>
+        <div v-if="icon">
+            <p>Durga est vraiment une icone</p>
+            <br />
+            <button @click="click">Click</button>
+        </div>
+
+        <div v-else>
+            <p>Durga est pas si ouf</p>
+        </div>
+    </div>
+
+
+    <div class="array">
+        <h2>V-for to generate each element in array</h2>
+        <ul>
+            <li v-for="person in persons">{{ person }}</li>
+        </ul>
+
     </div>
 
 

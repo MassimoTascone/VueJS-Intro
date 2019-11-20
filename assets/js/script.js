@@ -1,7 +1,7 @@
 new Vue({
     el: '#title',
     data: {
-        title: 'Site vers Durga',
+        title: 'Lien vers Durga',
         link: 'http://www.durgasoft.com',
         icon: true,
         
@@ -19,5 +19,21 @@ new Vue({
     data: {
         persons: ['Chin', 'Matis', 'Mass', 'Pierre', 'Jeason', 'Octav', 'Lal'],
 
+    }
+})
+
+new Vue({
+    el: '#api',
+
+    data() {
+        return {
+            info : null
+        }
+    },
+
+    mounted() {
+        axios
+        .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+        .then(response => (this.info = response.data.bpi))
     }
 })
